@@ -21,14 +21,27 @@
         <button type="submit">Find</button>
     </form>
 
-    <#list messages as message>
-        <div>
-            <b>${message.id}</b>
-            <span>${message.text}</span>
-            <b>${message.tag}</b>
-            <strong>${message.authorName}</strong>
-        </div>
-    <#else>
-        No messages
-    </#list>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Tag</th>
+            <th>Author</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <#list messages as message>
+            <tr>
+                <td><b>${message.id}</b></td>
+                <td><span>${message.text}</span></td>
+                <td><b>${message.tag}</b></td>
+                <td><strong>${message.authorName}</strong></td>
+            </tr>
+        <#else>
+            No messages
+        </#list>
+        </tbody>
+    </table>
 </@c.page>
